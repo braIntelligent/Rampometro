@@ -41,4 +41,7 @@ button.addEventListener("click", (e) => {
 
 window.addEventListener("resize", redimensionar);
 
-animate();
+animate(currentSphere, currentBox, currentPrism);
+
+
+
