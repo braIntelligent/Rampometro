@@ -11,7 +11,7 @@ export const createSphere = (currentSphere, high = 1) => {
   const geometry = new THREE.SphereGeometry(0.5, 32, 32);
   const material = new THREE.MeshStandardMaterial({ color: 0xff0000 });
   const sphere = new THREE.Mesh(geometry, material);
-  sphere.position.set(-0.75, high+ 0.5, 0.75);
+  sphere.position.set(-0.75, high + 0.5, 0.75);
   scene.add(sphere);
-  return sphere
+  return sphere;
 };

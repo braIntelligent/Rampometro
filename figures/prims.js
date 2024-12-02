@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import scene from "../basic/scene";
 
-export const createPrism = (currentPrism,distance = 6, high = 1) => {
+export const createPrism = (currentPrism, distance = 6, high = 1) => {
   if (currentPrism) {
     scene.remove(currentPrism);
     currentPrism.geometry.dispose();
@@ -22,6 +22,5 @@ export const createPrism = (currentPrism,distance = 6, high = 1) => {
   const material = new THREE.MeshBasicMaterial({ color: "grey" });
   const geometryPrism = new THREE.Mesh(geometry, material);
   scene.add(geometryPrism);
-  return geometryPrism
-
+  return geometryPrism;
 };

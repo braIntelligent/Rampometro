@@ -2,9 +2,13 @@ import { createGrid } from "./basic/grid";
 import { redimensionar } from "./basic/redimensionar";
 import { animate } from "./basic/animate";
 import { createBox } from "./figures/cube";
-import { createSphere } from "./figures/sphere";
 import { createPrism } from "./figures/prims";
-import * as CANNON from "cannon-es";
+import {
+  calculation,
+  getValues,
+  paintDetail,
+  question,
+} from "./basic/operation";
 
 // CREAR GRID
 createGrid();
@@ -12,23 +16,24 @@ createGrid();
 // CREAR CUBO
 let currentBox = createBox();
 
-//CREAR ESFERA
-let currentSphere = createSphere();
-
 // CREAR RAMPA
 let currentPrism = createPrism();
 
 // EVENTO
 const handlerButton = () => {
-  const hForm = document.getElementById("h-form");
-  const dForm = document.getElementById("d-form");
+  const value = getValues();
 
-  const high = parseFloat(hForm.value);
-  const distance = parseFloat(dForm.value);
-
-  currentSphere = createSphere(currentSphere, high);
-  currentBox = createBox(currentBox, high);
-  currentPrism = createPrism(currentPrism, distance, high);
+  if (value.high <= 2 && value.high > 0 && value.distance <= 10 && value.distance > 0) {
+    const trigonometry = calculation(value.high, value.distance);
+    const response = question(trigonometry.slope, value.distance);
+    paintDetail(trigonometry, value, response);
+  } else {
+    value.unorderList.innerHTML = `<li>Por favor, ingresa valores válidos para la altura y la distancia.</li>`;
+    return;
+  }
+  
+  currentBox = createBox(currentBox, value.high);
+  currentPrism = createPrism(currentPrism, value.distance, value.high);
 };
 
 // BOTON QUE MANEJA EVENTO
