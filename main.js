@@ -10,18 +10,12 @@ import {
   render,
 } from "./basic/operation";
 
-// CREAR GRID
 createGrid();
 
-// CREAR CUBO
 let currentBox = createBox();
 
-// CREAR RAMPA
 let currentPrism = createPrism();
 
-//OBTENCION DE VALUES
-
-// EVENTO
 const handlerButton = () => {
   const value = getValues();
 
@@ -37,7 +31,6 @@ const handlerButton = () => {
   }
 };
 
-// BOTON QUE MANEJA EVENTO
 const button = document.getElementById("button-form");
 
 button.addEventListener("click", (e) => {

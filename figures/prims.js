@@ -8,14 +8,14 @@ export const createPrism = (currentPrism, distance = 6, high = 1) => {
     currentPrism.material.dispose();
   }
   const Shape = new THREE.Shape();
-  Shape.moveTo(0, 0); // Punto A (origen)
-  Shape.lineTo(distance, 0); // Punto B (base)
-  Shape.lineTo(0, high); // Punto C (altura)
-  Shape.lineTo(0, 0); // Volver al punto A para cerrar el triángulo
+  Shape.moveTo(0, 0); 
+  Shape.lineTo(distance, 0);
+  Shape.lineTo(0, high); 
+  Shape.lineTo(0, 0);
 
   const extrudeSettings = {
-    depth: 1.5, // Profundidad del prisma
-    bevelEnabled: false, // Sin bordes biselados
+    depth: 1.5,
+    bevelEnabled: false,
   };
 
   const geometry = new THREE.ExtrudeGeometry(Shape, extrudeSettings);
