@@ -6,8 +6,8 @@ import { createPrism } from "./figures/prims";
 import {
   calculation,
   getValues,
-  paintDetail,
   question,
+  render,
 } from "./basic/operation";
 
 // CREAR GRID
@@ -19,21 +19,22 @@ let currentBox = createBox();
 // CREAR RAMPA
 let currentPrism = createPrism();
 
+//OBTENCION DE VALUES
+
 // EVENTO
 const handlerButton = () => {
   const value = getValues();
 
-  if (value.high <= 2 && value.high > 0 && value.distance <= 10 && value.distance > 0) {
+  if ((value.high <= 2 && value.high > 0) && (value.distance <= 10 && value.distance > 0)) {
     const trigonometry = calculation(value.high, value.distance);
     const response = question(trigonometry.slope, value.distance);
-    paintDetail(trigonometry, value, response);
+    render(trigonometry, value, response);
+    currentBox = createBox(currentBox, value.high);
+    currentPrism = createPrism(currentPrism, value.distance, value.high);
   } else {
     value.unorderList.innerHTML = `<li>Por favor, ingresa valores válidos para la altura y la distancia.</li>`;
     return;
   }
-  
-  currentBox = createBox(currentBox, value.high);
-  currentPrism = createPrism(currentPrism, value.distance, value.high);
 };
 
 // BOTON QUE MANEJA EVENTO

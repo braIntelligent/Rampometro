@@ -1,78 +1,93 @@
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid white;
-    background-color: black;
-    color: white;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    row-gap: 10px;
-    margin: 5px;
-    padding: 12px;
-    width: 20%;
-    border-radius: 4px;
-    box-shadow: 4px 4px 4px 4px black;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  width: 20%;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px 4px black;
+  height: 180px;
 }
 
 label {
-    font-family: monospace;
-    text-transform: uppercase;
+  font-family: monospace;
+  text-transform: uppercase;
 }
 
 input {
-    width: 80%;
+  width: 80%;
 }
 
 button {
-    font-family: monospace;
-    text-transform: uppercase;
-    border: 1px solid white;
-    padding: 4px;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  font-family: monospace;
+  text-transform: uppercase;
+  border: 1px solid white;
+  padding: 4px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 div {
-    /* border: 1px solid white; */
-    position: absolute;
-    height: 180px;
-    width: 80%;
-    margin: 10px;
-    display: flex;
-    justify-content: space-around;
+  /* border: 1px solid white; */
+  position: absolute;
+  height: 180px;
+  width: 80%;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 section {
-    /* border: 1px solid black; */
-    width: 50%;
-    display: flex;
+  border: 1px solid white;
+  width: 30%;
+  padding: 12px;
+  display: flex;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 4px 4px 4px 4px black;
 }
 
 ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 0;
-    font-family: monospace;
-    text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
+  font-family: monospace;
+  text-transform: uppercase;
+  row-gap: 8px;
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+}
 
+li {
+  text-align: center;
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  color:cyan;
+}
 
+.align {
+  text-align: left;
 }

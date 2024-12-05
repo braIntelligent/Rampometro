@@ -23,12 +23,12 @@ export const question = (slope, distance) => {
   }
 };
 
-export const paintDetail = (trigonometricCalculation, inputs, response) => {
-  inputs.unorderList.innerHTML = `<li>Distancia de la base: ${inputs.distance} ${inputs.distance >= 1 ? 'metros' : 'centimetros'}</li>
-  <li>Altura del obstaculo: ${inputs.high} ${inputs.high >= 1 ? 'metros' : 'centimetros'}</li>
-  <li>angulo en radianes: ${trigonometricCalculation.angleRadians} radianes</li>
-  <li>angulo en grados: ${trigonometricCalculation.angleDegree}°</li>
-  <li>pendiente: ${trigonometricCalculation.slope}%</li>
-  <li>resolucion: <a target='_blank' href='https://www.ciudadaccesible.cl/wp-content/uploads/2021/04/Ficha-5-Rampas-2021.pdf'>${response}</a></li>
-  `;
+export const render = (trigonometricCalculation, value, response) => {
+  value.unorderList.innerHTML = `
+    <li class="align">Distancia de la base: ${value.distance} ${value.distance >= 1 ? "metros" : "centimetros"}</li>
+    <li class="align">Altura del obstaculo: ${value.high} ${value.high >= 1 ? "metros" : "centimetros"}</li>
+    <li class="align">angulo en radianes: ${trigonometricCalculation.angleRadians} radianes</li>
+    <li class="align">angulo en grados: ${trigonometricCalculation.angleDegree}°</li>
+    <li class="align">pendiente: ${trigonometricCalculation.slope}%</li>
+    <li class="align">resolucion: <a target='_blank' href='https://www.ciudadaccesible.cl/wp-content/uploads/2021/04/Ficha-5-Rampas-2021.pdf'>${response}</a></li>`;
 };

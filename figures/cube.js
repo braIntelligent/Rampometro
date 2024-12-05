@@ -12,6 +12,7 @@ export const createBox = (currentBox, high = 1) => {
   const material = new THREE.MeshBasicMaterial({ color: "darkgrey" });
   const geometryBox = new THREE.Mesh(geometry, material);
   geometryBox.position.set(-0.75, high / 2, 0.75);
+
   scene.add(geometryBox);
   return geometryBox;
 };
